@@ -22,6 +22,11 @@ namespace Corona.Controllers
         public CountryData Get()
         {
             CountryData countryDatas = DownloadAndDeserializeJsonData("https://pomber.github.io/covid19/timeseries.json");
+            countryDatas.Turkey = countryDatas.Turkey.Where(x => x.Confirmed > 0).ToArray();
+            countryDatas.Italy = countryDatas.Italy.Where(x => x.Confirmed > 0).ToArray();
+            countryDatas.US = countryDatas.US.Where(x => x.Confirmed > 0).ToArray();
+
+
             return countryDatas;
         }
 

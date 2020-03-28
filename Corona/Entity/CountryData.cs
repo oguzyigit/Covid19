@@ -14,6 +14,8 @@ namespace Corona.Entity
         public Data[] Turkey { get; set; }
         [JsonProperty("Italy")]
         public Data[] Italy { get; set; }
+        [JsonProperty("US")]
+        public Data[] US { get; set; }
 
     }
 
